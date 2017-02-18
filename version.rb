@@ -10,7 +10,7 @@ class Version
   end
 
   def semver
-    [@major, @minor, @patch].join('.')
+    "#{@major}.#{@minor}.#{@patch}"
   end
 
   def ==(other)
