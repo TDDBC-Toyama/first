@@ -24,7 +24,10 @@ describe Version do
 
     describe 'Exception' do
       describe 'major に -1 を与えた場合' do
-        it { expect{ Version.new(-1) }.to raise_error(Version::MajorVersionValidationError) }
+        it { expect{ Version.new(-1) }.to raise_error(Version::VersionValidationError) }
+      end
+      describe 'minor に -1 を与えた場合' do
+        it { expect{ Version.new(1, -4) }.to raise_error(Version::VersionValidationError) }
       end
     end
   end

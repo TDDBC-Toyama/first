@@ -1,7 +1,8 @@
 class Version
-  class MajorVersionValidationError < StandardError; end
+  class VersionValidationError < StandardError; end
   def initialize(major, minor = 0, patch = 0)
-    raise MajorVersionValidationError, 'major にマイナスは指定できません' if major < 0
+    raise VersionValidationError, 'major にマイナスは指定できません' if major < 0
+    raise VersionValidationError, 'minor にマイナスは指定できません' if minor < 0
     @major, @minor, @patch = major, minor, patch
   end
 
