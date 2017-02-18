@@ -1,7 +1,7 @@
 class Version
-  attr_accessor :major
+  attr_accessor :major, :minor
 
-  def initialize(major:)
-    @major = major.to_s
+  def initialize(major: nil, minor: nil)
+    @major, @minor = major.to_s, minor.to_s
   end
 end
