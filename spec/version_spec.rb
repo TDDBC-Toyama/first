@@ -1,14 +1,20 @@
 require_relative '../version.rb'
 describe Version do
-  describe 'major 番号を与えて、 major 番号を返す' do
+  context 'major 番号だけ 1 を与えた場合' do
     it { expect(Version.new(1).major).to eq '1' }
+    it { expect(Version.new(1).minor).to eq '0' }
+    it { expect(Version.new(1).patch).to eq '0' }
   end
 
-  describe 'minor 番号を与えて、 minor 番号を返す' do
-    it { expect(Version.new(1, 1).minor).to eq '1' }
+  context 'minor 番号も加えて 1 と 4 を与えた場合' do
+    it { expect(Version.new(1, 4).major).to eq '1' }
+    it { expect(Version.new(1, 4).minor).to eq '4' }
+    it { expect(Version.new(1, 4).patch).to eq '0' }
   end
 
-  describe 'patch 番号を与えて、 patch 番号を返す' do
-    it { expect(Version.new(1, 1, 1).patch).to eq '1' }
+  context 'patch 番号も与えて、 1 と 4 と 2 を与えた場合' do
+    it { expect(Version.new(1, 4, 2).major).to eq '1' }
+    it { expect(Version.new(1, 4, 2).minor).to eq '4' }
+    it { expect(Version.new(1, 4, 2).patch).to eq '2' }
   end
 end
