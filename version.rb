@@ -1,8 +1,21 @@
 class Version
-  attr_reader :major, :minor, :patch
-
   def initialize(major, minor = 0, patch = 0)
-    @major, @minor, @patch = major.to_s, minor.to_s, patch.to_s
+    @major, @minor, @patch = major, minor, patch
   end
 
+  def major
+    @major.to_s
+  end
+
+  def minor
+    @minor.to_s
+  end
+
+  def patch
+    @patch.to_s
+  end
+
+  def semver
+    [@major, @minor, @patch].join('.')
+  end
 end
