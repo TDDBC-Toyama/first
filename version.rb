@@ -3,16 +3,10 @@ class Version
     @major, @minor, @patch = major, minor, patch
   end
 
-  def major
-    @major.to_s
-  end
-
-  def minor
-    @minor.to_s
-  end
-
-  def patch
-    @patch.to_s
+  [:major, :minor, :patch].each do |method|
+    define_method(method) do
+      instance_variable_get(:"@#{method}").to_s
+    end
   end
 
   def semver
