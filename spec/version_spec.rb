@@ -25,14 +25,14 @@ describe Version do
 
   describe '等価性' do
     before do
-      @v1 = Version.new(1, 4, 2)
-      @v2 = Version.new(1, 4, 2)
-      @v3 = Version.new(2, 1, 0)
+      @version = Version.new(1, 4, 2)
+      @same_version = Version.new(1, 4, 2)
+      @different_version = Version.new(2, 1, 0)
     end
 
-    it { expect(@v1 == @v2).to be true }
-    it { expect(@v1 == @v3).to be false }
-    it { expect(@v1 != @v2).to be false }
-    it { expect(@v1 != @v3).to be true }
+    it { expect(@version == @same_version).to be true }
+    it { expect(@version == @different_version).to be false }
+    it { expect(@version != @same_version).to be false }
+    it { expect(@version != @different_version).to be true }
   end
 end
