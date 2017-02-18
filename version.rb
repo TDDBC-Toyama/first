@@ -12,4 +12,8 @@ class Version
   def semver
     [@major, @minor, @patch].join('.')
   end
+
+  def ==(other)
+    self.semver == other.semver
+  end
 end
