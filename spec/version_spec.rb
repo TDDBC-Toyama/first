@@ -21,6 +21,12 @@ describe Version do
       it { expect(Version.new(1, 4, 2).patch).to eq '2' }
       it { expect(Version.new(1, 4, 2).semver).to eq '1.4.2' }
     end
+
+    describe 'Exception' do
+      describe 'major に -1 を与えた場合' do
+        it { expect{ Version.new(-1) }.to raise_error(Version::MajorVersionValidationError) }
+      end
+    end
   end
 
   describe '等価性' do
