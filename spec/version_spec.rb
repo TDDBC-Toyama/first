@@ -27,8 +27,12 @@ describe Version do
     before do
       @v1 = Version.new(1, 4, 2)
       @v2 = Version.new(1, 4, 2)
+      @v3 = Version.new(2, 1, 0)
     end
 
     it { expect(@v1 == @v2).to be true }
+    it { expect(@v1 == @v3).to be false }
+    it { expect(@v1 != @v2).to be false }
+    it { expect(@v1 != @v3).to be true }
   end
 end
