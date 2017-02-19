@@ -65,14 +65,14 @@ class LifeGame
 
   def around_alive_count(b, i, j)
     count = 0
-    if b[i-1][j-1] == '■'; count += 1 end
-    if b[i-1][j] == '■'; count += 1 end
-    if b[i-1][j+1] == '■'; count += 1 end
-    if b[i][j-1] == '■'; count += 1 end
+    if i > 0 && j > 0 && b[i-1][j-1] == '■'; count += 1 end
+    if i > 0 && b[i-1][j] == '■'; count += 1 end
+    if i > 0 && b[i-1][j+1] == '■'; count += 1 end
+    if j > 0 && b[i][j-1] == '■'; count += 1 end
     if b[i][j+1] == '■'; count += 1 end
-    if i < 4 && b[i+1][j-1] == '■'; count += 1 end
-    if i < 4 && b[i+1][j] == '■'; count += 1 end
-    if i < 4 && b[i+1][j+1] == '■'; count += 1 end
+    if i+1 < b.size && j > 0 && b[i+1][j-1] == '■'; count += 1 end
+    if i+1 < b.size && b[i+1][j] == '■'; count += 1 end
+    if i+1 < b.size && b[i+1][j+1] == '■'; count += 1 end
     count
   end
 end
