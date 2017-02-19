@@ -1,13 +1,10 @@
 class LifeGame
   def init
-    b = []
-    for i in 0..4 do
-      b << []
-      for j in 0..4 do
-        b[i] << '□'
-      end
-    end
-    b
+    5.times.inject([]) {|row|
+      row << 5.times.inject([]) {|col|
+        col << '□'
+      }
+    }
   end
 
   def main
