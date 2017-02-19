@@ -1,5 +1,5 @@
 class LifeGame
-  def main
+  def init
     b = []
     for i in 0..4 do
       b << []
@@ -7,7 +7,11 @@ class LifeGame
         b[i] << '□'
       end
     end
+    b
+  end
 
+  def main
+    b = init
     b[2][1] = '■'
     b[2][2] = '■'
     b[2][3] = '■'
