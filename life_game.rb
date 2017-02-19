@@ -41,15 +41,7 @@ class LifeGame
       5.times do |j|
         if b[i][j] == '□'
           # 誕生の場合
-          count = 0
-          if b[i-1][j-1] == '■'; count += 1 end
-          if b[i-1][j] == '■'; count += 1 end
-          if b[i-1][j+1] == '■'; count += 1 end
-          if b[i][j-1] == '■'; count += 1 end
-          if b[i][j+1] == '■'; count += 1 end
-          if i < 4 && b[i+1][j-1] == '■'; count += 1 end
-          if i < 4 && b[i+1][j] == '■'; count += 1 end
-          if i < 4 && b[i+1][j+1] == '■'; count += 1 end
+          count = around_alive_count(b, i, j)
           if count >= 3
             bb[i][j] = '■'
           else
@@ -72,5 +64,18 @@ class LifeGame
       end
     end
     bb
+  end
+
+  def around_alive_count(b, i, j)
+    count = 0
+    if b[i-1][j-1] == '■'; count += 1 end
+    if b[i-1][j] == '■'; count += 1 end
+    if b[i-1][j+1] == '■'; count += 1 end
+    if b[i][j-1] == '■'; count += 1 end
+    if b[i][j+1] == '■'; count += 1 end
+    if i < 4 && b[i+1][j-1] == '■'; count += 1 end
+    if i < 4 && b[i+1][j] == '■'; count += 1 end
+    if i < 4 && b[i+1][j+1] == '■'; count += 1 end
+    count
   end
 end
