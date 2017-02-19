@@ -62,14 +62,21 @@ describe LifeGame do
 
   describe '#around_alive_count' do
     let(:life_game) { LifeGame.new }
-
-    it do
-      board = [
+    let(:board) {
+      [
         ['□', '□', '□'],
         ['□', '□', '□'],
         ['□', '□', '□']
       ]
+    }
+
+    it do
       expect(life_game.around_alive_count(board, 1, 1)).to eq 0
+    end
+
+    it do
+      board[0][0] = '■'
+      expect(life_game.around_alive_count(board, 1, 1)).to eq 1
     end
   end
 end
