@@ -1,4 +1,5 @@
 require_relative '../life_game'
+require 'byebug'
 
 describe LifeGame do
   describe '#init' do
@@ -77,6 +78,11 @@ describe LifeGame do
     it do
       board[0][0] = '■'
       expect(life_game.around_alive_count(board, 1, 1)).to eq 1
+    end
+
+    it do
+      black_board = board.map {|row| row.map { '■' } }
+      expect(life_game.around_alive_count(black_board, 1, 1)).to eq 8
     end
   end
 end
