@@ -37,8 +37,8 @@ class LifeGame
 
   def next_generation(b)
     bb = [[],[],[],[],[]]
-    for i in 0..4 do
-      for j in 0..4 do
+    5.times do |i|
+      5.times do |j|
         if b[i][j] == '□'
           # 誕生の場合
           count = 0
