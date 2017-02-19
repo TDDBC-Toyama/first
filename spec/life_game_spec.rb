@@ -84,5 +84,10 @@ describe LifeGame do
       black_board = board.map {|row| row.map { '■' } }
       expect(life_game.around_alive_count(black_board, 1, 1)).to eq 8
     end
+
+    it do
+      black_board = board.map {|row| row.map { '■' } }
+      expect(life_game.around_alive_count(black_board, 2, 0)).to eq 3
+    end
   end
 end
