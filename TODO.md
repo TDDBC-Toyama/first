@@ -1,3 +1,6 @@
+お題: セマンティック・バージョニング
+https://gist.github.com/twada/760b1fe7f04eb03ee9799d75ecd28cd8
+
 - [x] major番号を与えて、major 番号を文字列で返す
   - [x] 1 を与えて、'1' を返す
 - [x] minor番号を与える、major 番号を文字列で返す
