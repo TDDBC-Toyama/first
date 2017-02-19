@@ -1,4 +1,4 @@
-require_relative '../main'
+require_relative '../life_game'
 
 describe 'LifeGame' do
   it do
