@@ -73,4 +73,4 @@ class LifeGame
     bb
   end
 end
-LifeGame.new.main
+# LifeGame.new.main
