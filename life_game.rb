@@ -64,7 +64,7 @@ class LifeGame
           if b[i][j+1] == '■'; count += 1 end
           if b[i+1][j] == '■'; count += 1 end
           if count == 2
-            bb[i][j] = b[i][j]
+            bb[i][j] = '■'
           else
             bb[i][j] = '□'
           end
