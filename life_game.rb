@@ -50,11 +50,8 @@ class LifeGame
         end
         if b[i][j] == '■'
           # 生存・過疎・過密の場合
-          count = 0
-          if b[i-1][j] == '■'; count += 1 end
-          if b[i][j-1] == '■'; count += 1 end
-          if b[i][j+1] == '■'; count += 1 end
-          if b[i+1][j] == '■'; count += 1 end
+          count = around_alive_count(b, i, j)
+
           if count == 2
             bb[i][j] = '■'
           else
