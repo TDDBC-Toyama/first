@@ -1,2 +1,2 @@
-# 1-first-day
+# first
 TDDBC-Toyama #1
