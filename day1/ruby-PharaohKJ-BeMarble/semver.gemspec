@@ -6,8 +6,8 @@ require 'semver/version'
 Gem::Specification.new do |spec|
   spec.name          = "semver"
   spec.version       = Semver::VERSION
-  spec.authors       = ["BeMarble"]
-  spec.email         = ["mktkbys@gmail.com"]
+  spec.authors       = ["Example"]
+  spec.email         = ["example@example.com"]
 
   spec.summary       = %q{Write a short summary, because Rubygems requires one.}
   spec.description   = %q{Write a longer description or delete this line.}
