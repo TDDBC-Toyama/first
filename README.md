@@ -6,9 +6,9 @@ TDDBC-Toyama #1
 ```
 .
 ├── day1
-│   └── pair-name
+│   └── lang-pair-name
 ├── day2
-│   └── pair-name
+│   └── lang-pair-name
 └── README.md
 
 ```
